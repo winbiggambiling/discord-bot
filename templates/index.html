@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Gambling Bot Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+    <link rel="stylesheet" href="/static/css/custom.css">
+</head>
+<body>
+    <div class="container py-4">
+        <header class="d-flex align-items-center pb-3 mb-4 border-bottom">
+            <span class="fs-4 me-2">🎲</span>
+            <h1 class="fs-4">Discord Gambling Bot Dashboard</h1>
+        </header>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2 class="h5 mb-0">Bot Status</h2>
+                        <span class="badge bg-success" id="status-badge">Online</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <h3 class="h5">Users</h3>
+                                        <div class="fs-1 fw-bold" id="user-count">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <h3 class="h5">Currency in Circulation</h3>
+                                        <div class="fs-1 fw-bold" id="total-currency">$0.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <h3 class="h5">Features</h3>
+                                        <div class="d-flex flex-column align-items-center gap-1">
+                                            <span class="badge bg-primary">Economy System</span>
+                                            <span class="badge bg-primary">Gambling Games</span>
+                                            <span class="badge bg-primary">Mining System</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2 class="h5 mb-0">Top Users</h2>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="refresh-top-users">
+                            <i data-feather="refresh-cw"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Rank</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="top-users-table">
+                                    <tr>
+                                        <td colspan="3" class="text-center">Loading data...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2 class="h5 mb-0">Recent Transactions</h2>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="refresh-transactions">
+                            <i data-feather="refresh-cw"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">User</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Amount</th>
+                                        <th scope="col">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="transactions-table">
+                                    <tr>
+                                        <td colspan="4" class="text-center">Loading data...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2 class="h5 mb-0">Recent Games</h2>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="refresh-games">
+                            <i data-feather="refresh-cw"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">User</th>
+                                        <th scope="col">Game</th>
+                                        <th scope="col">Bet</th>
+                                        <th scope="col">Payout</th>
+                                        <th scope="col">Result</th>
+                                        <th scope="col">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="games-table">
+                                    <tr>
+                                        <td colspan="6" class="text-center">Loading data...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="pt-3 mt-4 text-body-secondary border-top">
+            <div class="d-flex justify-content-between align-items-center">
+                <p>&copy; 2023 Discord Gambling Bot</p>
+                <p>Last updated: <span id="last-update">Never</span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

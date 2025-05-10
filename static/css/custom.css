@@ -1,0 +1,94 @@
+/* Custom Styles for Discord Gambling Bot */
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.table th {
+    border-top: none;
+}
+
+.win-amount {
+    color: var(--bs-success);
+}
+
+.loss-amount {
+    color: var(--bs-danger);
+}
+
+.loading-spinner {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem auto;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--bs-primary);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Game type badges */
+.badge-coinflip {
+    background-color: var(--bs-yellow);
+    color: var(--bs-dark);
+}
+
+.badge-dice {
+    background-color: var(--bs-indigo);
+}
+
+.badge-slots {
+    background-color: var(--bs-orange);
+    color: var(--bs-dark);
+}
+
+.badge-slots_extended {
+    background-color: var(--bs-gold);
+    color: var(--bs-dark);
+}
+
+.badge-roulette {
+    background-color: var(--bs-red);
+}
+
+.badge-blackjack {
+    background-color: var(--bs-green);
+}
+
+/* Transaction type badges */
+.badge-deposit {
+    background-color: var(--bs-success);
+}
+
+.badge-withdrawal {
+    background-color: var(--bs-danger);
+}
+
+.badge-bet {
+    background-color: var(--bs-warning);
+    color: var(--bs-dark);
+}
+
+.badge-win {
+    background-color: var(--bs-success);
+}
+
+.badge-mining {
+    background-color: var(--bs-info);
+    color: var(--bs-dark);
+}
+
+.badge-daily {
+    background-color: var(--bs-teal);
+}
+
+.badge-admin {
+    background-color: var(--bs-purple);
+}
